@@ -16,7 +16,7 @@ return [
         'home'       => 'foros',
         'discussion' => 'temas',
         'category'   => 'categoria',
-        'post'       => 'respuestas',
+        'post'       => 'posts',
         'register'   => 'registrar',
         'login'      => 'login',
     ],
