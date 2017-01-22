@@ -10,7 +10,7 @@ return [
     'create' => 'Crear nuevo Tema',
     'new' => 'Nuevo Tema',
     'posted' => 'Posteado por',
-    'posted_in' => 'Posteado en',
+    'posted_in' => 'Posteado en ',
     'error' => 'Por favor debe corregir los siguientes errores',
     'delete_sure' => '¿Esta seguro que desea eliminarlo?',
 ];

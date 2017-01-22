@@ -13,7 +13,7 @@
 	<div id="chatter_header" style="background-color:{{ $discussion->color }}">
 		<div class="container">
 			<a class="back_btn" href="/{{ Config::get('chatter.routes.home') }}"><i class="chatter-back"></i></a>
-			<h1>{{ $discussion->title }}</h1><span class="chatter_head_details">{{ trans('forum.posted_in') }}{{ Config::get('chatter.titles.category') }}<a class="chatter_cat" href="/{{ Config::get('chatter.routes.home') }}/{{ Config::get('chatter.routes.category') }}/{{ $discussion->category->slug }}" style="background-color:{{ $discussion->category->color }}">{{ $discussion->category->name }}</a></span>
+			<h1>{{ $discussion->title }}</h1><span class="chatter_head_details">{{ trans('forum.posted_in') }} {{ Config::get('chatter.titles.category') }}<a class="chatter_cat" href="/{{ Config::get('chatter.routes.home') }}/{{ Config::get('chatter.routes.category') }}/{{ $discussion->category->slug }}" style="background-color:{{ $discussion->category->color }}">{{ $discussion->category->name }}</a></span>
 		</div>
 	</div>
 
@@ -55,8 +55,8 @@
 		                			@if(!Auth::guest() && (Auth::user()->id == $post->user->id))
 		                				<div id="delete_warning_{{ $post->id }}" class="chatter_warning_delete">
 		                					<i class="chatter-warning"></i>{{ trans('forum.delete_sure') }}
-		                					<button class="btn btn-sm btn-danger pull-right delete_response">{{ trans('labels.general.yes')</button>
-		                					<button class="btn btn-sm btn-default pull-right">{{ trans('labels.general.no')</button>
+		                					<button class="btn btn-sm btn-danger pull-right delete_response">{{ trans('labels.general.yes') }}</button>
+		                					<button class="btn btn-sm btn-default pull-right">{{ trans('labels.general.no') }}</button>
 		                				</div>
 			                			<div class="chatter_post_actions">
 			                				<p class="chatter_delete_btn">

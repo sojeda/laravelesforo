@@ -13,11 +13,11 @@ return [
     */
 
     'routes' => [
-        'home'       => 'forums',
-        'discussion' => 'discussion',
-        'category'   => 'category',
-        'post'       => 'posts',
-        'register'   => 'register',
+        'home'       => 'foros',
+        'discussion' => 'temas',
+        'category'   => 'categoria',
+        'post'       => 'respuestas',
+        'register'   => 'registrar',
         'login'      => 'login',
     ],
 
@@ -32,8 +32,8 @@ return [
     */
 
     'titles' => [
-        'discussion' => 'Discussion',
-        'category'   => 'Category',
+        'discussion' => 'Temas',
+        'category'   => 'Categoria',
     ],
 
    /*
