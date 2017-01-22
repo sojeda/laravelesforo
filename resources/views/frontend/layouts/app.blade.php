@@ -31,6 +31,7 @@
                 'csrfToken' => csrf_token(),
             ]); ?>
         </script>
+        @yield('css')
     </head>
     <body id="app-layout">
         <div id="app">
@@ -49,5 +50,6 @@
         @yield('after-scripts')
 
         @include('includes.partials.ga')
+        @yield('js')
     </body>
 </html>
