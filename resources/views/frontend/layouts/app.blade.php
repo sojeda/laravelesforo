@@ -9,8 +9,8 @@
         <title>@yield('title', app_name())</title>
 
         <!-- Meta -->
-        <meta name="description" content="@yield('meta_description', 'Laravel 5 Boilerplate')">
-        <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
+        <meta name="description" content="@yield('meta_description', 'Laraveles Foro')">
+        <meta name="author" content="@yield('meta_author', 'Sergio Ojeda')">
         @yield('meta')
 
         <!-- Styles -->
@@ -43,13 +43,13 @@
                 @yield('content')
             </div><!-- container -->
         </div><!--#app-->
-
+        
+        @yield('foro')
         <!-- Scripts -->
         @yield('before-scripts')
         {!! Html::script(elixir('js/frontend.js')) !!}
         @yield('after-scripts')
 
         @include('includes.partials.ga')
-        @yield('js')
     </body>
 </html>

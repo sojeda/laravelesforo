@@ -53,9 +53,9 @@ return [
     |
     */
 
-    'headline'      => 'Welcome to Chatter',
-    'description'   => 'A simple forum package for your Laravel app.',
-    'headline_logo' => '/vendor/devdojo/chatter/assets/images/logo-light.png',
+    'headline'      => 'Bienvenido al Foro de Laraveles',
+    'description'   => 'Comunidad de Laravel en español',
+    'headline_logo' => '/logo.png',
 
     /*
     |--------------------------------------------------------------------------
@@ -76,8 +76,8 @@ return [
     */
 
     'yields' => [
-        'head'   => 'css',
-        'footer' => 'js',
+        'head'   => 'after-styles',
+        'footer' => 'after-scripts',
     ],
 
     /*
@@ -149,8 +149,8 @@ return [
     */
 
     'alert_messages' => [
-        'success' => 'Well done!',
-        'info'    => 'Heads Up!',
+        'success' => '¡Bien hecho!',
+        'info'    => '¡Noticia!',
         'warning' => 'Wuh Oh!',
         'danger'  => 'Oh Snap!',
     ],
