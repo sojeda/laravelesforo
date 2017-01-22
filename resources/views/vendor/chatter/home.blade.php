@@ -8,7 +8,7 @@
 	@endif
 @stop
 
-@section('content')
+@section('foro')
 
 <div id="chatter" class="chatter_home">
 
@@ -54,8 +54,8 @@
 	    	<div class="col-md-3 left-column">
 	    		<!-- SIDEBAR -->
 	    		<div class="chatter_sidebar">
-					<button class="btn btn-primary" id="new_discussion_btn"><i class="chatter-new"></i> New {{ Config::get('chatter.titles.discussion') }}</button> 
-					<a href="/{{ Config::get('chatter.routes.home') }}"><i class="chatter-bubble"></i> All {{ Config::get('chatter.titles.discussion') }}</a>
+					<button class="btn btn-primary" id="new_discussion_btn"><i class="chatter-new"></i> {{ trans('forum.new') }}</button> 
+					<a href="/{{ Config::get('chatter.routes.home') }}"><i class="chatter-bubble"></i> {{ trans('forum.all') }}</a>
 					<ul class="nav nav-pills nav-stacked">
 						<?php $categories = DevDojo\Chatter\Models\Models::category()->all(); ?>
 						@foreach($categories as $category)
@@ -94,7 +94,7 @@
 
 					        		<div class="chatter_middle">
 					        			<h3 class="chatter_middle_title">{{ $discussion->title }} <div class="chatter_cat" style="background-color:{{ $discussion->category->color }}">{{ $discussion->category->name }}</div></h3>
-					        			<span class="chatter_middle_details">Posted By: <span data-href="/user">{{ ucfirst($discussion->user->{Config::get('chatter.user.database_field_with_user_name')}) }}</span> {{ \Carbon\Carbon::createFromTimeStamp(strtotime($discussion->created_at))->diffForHumans() }}</span>
+					        			<span class="chatter_middle_details">{{ trans('forum.posted') }}: <span data-href="/user">{{ ucfirst($discussion->user->{Config::get('chatter.user.database_field_with_user_name')}) }}</span> {{ \Carbon\Carbon::createFromTimeStamp(strtotime($discussion->created_at))->diffForHumans() }}</span>
 					        			@if($discussion->post[0]->markdown)
 					        				<?php $discussion_body = GrahamCampbell\Markdown\Facades\Markdown::convertToHtml( $discussion->post[0]->body ); ?>
 					        			@else
@@ -159,7 +159,7 @@
             <!-- BODY -->
         	<div id="editor">
         		@if( $chatter_editor == 'tinymce' || empty($chatter_editor) )
-					<label id="tinymce_placeholder">Add the content for your Discussion here</label>
+					<label id="tinymce_placeholder">{{ trans('forum.tinymce_placeholder') }}</label>
     				<textarea id="body" class="richText" name="body" placeholder="">{{ old('body') }}</textarea>
     			@elseif($chatter_editor == 'simplemde')
     				<textarea id="simplemde" name="body" placeholder="">{{ old('body') }}</textarea>
@@ -169,9 +169,9 @@
             <input type="hidden" name="_token" id="csrf_token_field" value="{{ csrf_token() }}">
 
             <div id="new_discussion_footer">
-            	<input type='text' id="color" name="color" /><span class="select_color_text">Select a Color for this Discussion (optional)</span>
-            	<button id="submit_discussion" class="btn btn-success pull-right"><i class="chatter-new"></i> Create {{ Config::get('chatter.titles.discussion') }}</button>
-            	<a href="/{{ Config::get('chatter.routes.home') }}" class="btn btn-default pull-right" id="cancel_discussion">Cancel</a>
+            	<input type='text' id="color" name="color" /><span class="select_color_text">{{ trans('forum.color') }}</span>
+            	<button id="submit_discussion" class="btn btn-success pull-right"><i class="chatter-new"></i> {{ trans('forum.create') }}</button>
+            	<a href="/{{ Config::get('chatter.routes.home') }}" class="btn btn-default pull-right" id="cancel_discussion">{{ trans('buttons.general.cancel') }}</a>
             	<div style="clear:both"></div>
             </div>
         </form>
